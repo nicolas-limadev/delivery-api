@@ -25,4 +25,5 @@ public class SolicitacaoEntregaService {
 
     return entregaRepository.save(entrega);
   }
+
 }
