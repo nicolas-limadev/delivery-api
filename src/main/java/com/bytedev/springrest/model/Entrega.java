@@ -40,4 +40,11 @@ public class Entrega {
 
   private LocalDateTime dataPedido;
   private LocalDateTime dataFinalizacao;
+
+  public String toString() {
+
+    return "Entrega{" + "id:" + this.id + ", cliente:" + this.cliente + ", destinatario:" + this.destinatario
+        + ", taxa:" + this.taxa + ", status:" + this.status + ", dataPedido:" + this.dataPedido + ", dataFinalizacao:"
+        + this.dataFinalizacao + "}";
+  }
 }
