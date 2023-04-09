@@ -1,11 +1,15 @@
 package com.bytedev.springrest.controller;
 
+import com.bytedev.springrest.assembler.EntregaAssembler;
 import com.bytedev.springrest.model.Entrega;
 import com.bytedev.springrest.repository.EntregaRepository;
+import com.bytedev.springrest.representation.DestinatarioModel;
+import com.bytedev.springrest.representation.EntregaModel;
 import com.bytedev.springrest.service.SolicitacaoEntregaService;
 import java.util.List;
 import javax.validation.Valid;
 import lombok.AllArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,23 +27,26 @@ public class EntregaController {
 
   private SolicitacaoEntregaService solicitacaoEntregaService;
   private EntregaRepository entregaRepository;
+  private EntregaAssembler entregaAssembler;
 
   @PostMapping
   @ResponseStatus(HttpStatus.CREATED)
-  public Entrega solicitar(@Valid @RequestBody Entrega entrega) {
-    return solicitacaoEntregaService.solicitar(entrega);
+  public EntregaModel solicitar(@Valid @RequestBody Entrega entrega) {
+    return entregaAssembler.toModel(
+      solicitacaoEntregaService.solicitar(entrega)
+    );
   }
 
   @GetMapping
-  public List<Entrega> listar() {
-    return entregaRepository.findAll();
+  public List<EntregaModel> listar() {
+    return entregaAssembler.toCollectionModel(entregaRepository.findAll());
   }
 
   @GetMapping("/{entregaId}")
-  public ResponseEntity<Entrega> buscar(@PathVariable Long entregaId) {
+  public ResponseEntity<EntregaModel> buscar(@PathVariable Long entregaId) {
     return entregaRepository
       .findById(entregaId)
-      .map(ResponseEntity::ok)
+      .map(entrega -> ResponseEntity.ok(entregaAssembler.toModel(entrega)))
       .orElse(ResponseEntity.notFound().build());
   }
 }

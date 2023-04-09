@@ -1,11 +1,9 @@
 package com.bytedev.springrest.exceptionhandler;
 
-import java.time.LocalDateTime;
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-
+import java.time.OffsetDateTime;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,7 +14,7 @@ import lombok.Setter;
 public class Problem {
 
   private Integer status;
-  private LocalDateTime dataHora;
+  private OffsetDateTime dataHora;
   private String titulo;
   private List<Campo> campos;
 
