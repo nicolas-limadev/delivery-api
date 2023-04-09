@@ -27,4 +27,5 @@
     },
     "java.compile.nullAnalysis.mode": "automatic",
     "java.configuration.updateBuildConfiguration": "interactive",
+    "editor.fontFamily": "'JetBrains Mono', 'monospace', monospace",
   }

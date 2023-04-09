@@ -35,6 +35,11 @@ public class CatalogoClienteService {
 
   @Transactional
   public void excluir(Long clientId) {
+
+    clienteRepository.findById(clientId)
+        .orElseThrow(() -> new NegocioException("ID não encontrado"));
+
     clienteRepository.deleteById(clientId);
+
   }
 }
