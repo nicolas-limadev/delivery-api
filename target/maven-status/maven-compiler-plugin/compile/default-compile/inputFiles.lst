@@ -3,6 +3,7 @@
 /home/nicolas/spring-apis/spring-rest-api/src/main/java/com/bytedev/springrest/model/Destinatario.java
 /home/nicolas/spring-apis/spring-rest-api/src/main/java/com/bytedev/springrest/service/SolicitacaoEntregaService.java
 /home/nicolas/spring-apis/spring-rest-api/src/main/java/com/bytedev/springrest/repository/ClienteRepository.java
+/home/nicolas/spring-apis/spring-rest-api/src/main/java/com/bytedev/springrest/assembler/EntregaAssembler.java
 /home/nicolas/spring-apis/spring-rest-api/src/main/java/com/bytedev/springrest/common/ModelMapperConfig.java
 /home/nicolas/spring-apis/spring-rest-api/src/main/java/com/bytedev/springrest/model/Entrega.java
 /home/nicolas/spring-apis/spring-rest-api/src/main/java/com/bytedev/springrest/repository/EntregaRepository.java
@@ -14,5 +15,6 @@
 /home/nicolas/spring-apis/spring-rest-api/src/main/java/com/bytedev/springrest/representation/EntregaModel.java
 /home/nicolas/spring-apis/spring-rest-api/src/main/java/com/bytedev/springrest/model/Cliente.java
 /home/nicolas/spring-apis/spring-rest-api/src/main/java/com/bytedev/springrest/service/CatalogoClienteService.java
+/home/nicolas/spring-apis/spring-rest-api/src/main/java/com/bytedev/springrest/representation/ClienteResumoModel.java
 /home/nicolas/spring-apis/spring-rest-api/src/main/java/com/bytedev/springrest/exceptionhandler/Problem.java
 /home/nicolas/spring-apis/spring-rest-api/src/main/java/com/bytedev/springrest/controller/ClienteController.java
